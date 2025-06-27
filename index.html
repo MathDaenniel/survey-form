@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        form {
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            border-radius: 0;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: none;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        legend {
+            background-color: #f0f0f0;
+            color: #555;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: 500;
+            font-size: 1em;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-top: 3px;
+            margin-bottom: 12px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #777;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+            margin-bottom: 12px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            cursor: pointer;
+            font-weight: 400;
+        }
+        .radio-group label:last-child, .checkbox-group label:last-child {
+            margin-bottom: 0;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: auto;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        input[type="reset"],
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: 500;
+            margin: 0 8px;
+            background-color: #e0e0e0;
+            color: #444;
+        }
+
+        input[type="reset"]:hover,
+        input[type="submit"]:hover {
+            background-color: #d0d0d0;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form id ="googleForm">
+        <h2>Survey Experience For Customers</h2>
+
+        <fieldset>
+            <legend>Customer Information</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="10" max="100">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Overall Service Rating</legend>
+            <label>How satisfied are you with our service?</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="rating" value="very_satisfied"> Very Satisfied
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="satisfied"> Satisfied
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="neutral"> Neutral
+                </label>
+                <label>
+                    <input type="radio" name="rating" value="dissatisfied"> Dissatisfied
+                </label>
+            </div>
+
+            <label>What features do you use? (Check all that apply):</label>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="feature" value="chat"> Live Chat
+                </label>
+                <label>
+                    <input type="checkbox" name="feature" value="support"> Email Support
+                </label>
+                <label>
+                    <input type="checkbox" name="feature" value="faq"> FAQs
+                </label>
+            </div>
+
+            <div>
+                <label for="contact_method">Preferred Contact Method:</label>
+                <select id="contact_method" name="contact_method">
+                    <option value="">--Please choose--</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="chat">Live Chat</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Feedback</legend>
+            <div>
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="5" placeholder="Tell us how we can improve..."></textarea>
+            </div>
+        </fieldset>
+
+        <div class="button-group">
+            <input type="reset" value="Reset Form">
+            <input type="submit" value="Submit Survey">
+        </div>
+    </form>
+
+
+
+
+<script>
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzrmD6ABI6qRzzCiq57N86DvLx4IyLdwoMdhDo05faDdsiAv8rgwcrBeLVWrVvAQaCGew/exec';
+
+  const form = document.getElementById('googleForm');
+
+ 
+
+//When the user clicks the submit button, this function runs.
+
+  form.addEventListener('submit', e => {
+
+    e.preventDefault(); //This stops the browser’s default action of reloading
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+
+      .then(response => {
+
+        alert("Form submitted successfully!");
+
+        form.reset();
+
+      })
+
+      .catch(error => alert('Error!', error.message));
+
+  });
+
+</script>
+
+
+</body>
+</html>
